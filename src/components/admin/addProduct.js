@@ -125,9 +125,9 @@ function AddProduct() {
     const [name, setName] = useState()
     const [type, setType] = useState()
     const [price, setPrice] = useState()
-    const [sizeS, setSizeS] = useState()
-    const [sizeL, setSizeL] = useState()
-    const [sizeM, setsizeM] = useState()
+    const [size, setsize] = useState()
+    // const [sizeL, setSizeL] = useState()
+    // const [sizeM, setsizeM] = useState()
     const [color, setColor] = useState()
     const [description, setDescription] = useState()
 
@@ -156,9 +156,10 @@ function AddProduct() {
 
     const submitForm = async () => {
         let today = new Date().toISOString().slice(0, 10)
-        let currentQuantity = sizeS + sizeL + sizeM
-        console.log(name, type, price, currentQuantity, sizeS, sizeL, sizeM, color, avatar)
-        if (name && type && price && currentQuantity && sizeS && sizeL && sizeM && color && avatar) {
+        let currentQuantity = size
+        // + sizeL + sizeM
+        console.log(name, type, price, currentQuantity, size, color, avatar)
+        if (name && type && price && currentQuantity && size && color && avatar) {
             const config = {
                 method: 'POST',
                 headers: {
@@ -173,9 +174,9 @@ function AddProduct() {
                     img: avatar,
                     currentQuantity: currentQuantity,
                     currentSold: 0,
-                    sizeS: sizeS,
-                    sizeL: sizeL,
-                    sizeM: sizeM,
+                    size: size,
+                    // sizeL: sizeL,
+                    // sizeM: sizeM,
                     color: color,
                     date: today,
                     updateDate: today,
@@ -212,7 +213,7 @@ function AddProduct() {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        
+
                                         name="name"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
@@ -225,7 +226,7 @@ function AddProduct() {
                                     <input
                                         type="number"
                                         className="form-control"
-                                        
+
                                         name="price"
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
@@ -236,19 +237,19 @@ function AddProduct() {
                             </div>
                             <div className="d-flex">
                                 <div className="form-group col-xl-4">
-                                    <label htmlFor="exampleInputPassword1">Số lượng size S</label>
+                                    <label htmlFor="exampleInputPassword1">Số lượng</label>
                                     <input
                                         type="number"
                                         className="form-control"
-                                        
-                                        name="sizeS"
-                                        value={sizeS}
-                                        onChange={(e) => setSizeS(e.target.value)}
+
+                                        name="size"
+                                        value={size}
+                                        onChange={(e) => setsize(e.target.value)}
                                         placeholder="Nhập số lượng sản phẩm"
                                         required
                                     />
                                 </div>
-                                <div className="form-group col-xl-4">
+                                {/* <div className="form-group col-xl-4">
                                     <label htmlFor="exampleInputPassword1">Số lượng size M:</label>
                                     <input
                                         type="number"
@@ -274,7 +275,7 @@ function AddProduct() {
                                         placeholder="Nhập số lượng sản phẩm"
                                         required
                                     />
-                                </div>
+                                </div> */}
 
 
 
@@ -286,7 +287,7 @@ function AddProduct() {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        
+
                                         name="name"
                                         value={color}
                                         onChange={(e) => setColor(e.target.value)}
@@ -338,7 +339,7 @@ function AddProduct() {
                             <MdEditor
                                 style={{ height: "500px" }}
                                 renderHTML={(text) => mdParser.render(text)}
-                                onChange={(e)=>setDescription(e.text)}
+                                onChange={(e) => setDescription(e.text)}
                             />
                         </form>
                         <div className={"div-btn"}>
