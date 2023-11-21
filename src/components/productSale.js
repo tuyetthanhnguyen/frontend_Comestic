@@ -14,8 +14,8 @@ function ProductSale({ setCart, cart }) {
     const [product, setProduct] = useState([])
     const [arrSale, setArrSale] = useState([])
     const [currentID, setCurrentID] = useState()
-    const [currentSize, setCurrentSize] = useState("S")
-    const [size, setSize] = useState("S")
+    const [currentSize, setCurrentSize] = useState("150ml")
+    const [size, setSize] = useState("150ml")
 
 
     const AddToCart = (item) => {
@@ -42,8 +42,8 @@ function ProductSale({ setCart, cart }) {
             }
             console.log("tempCart", tempCart)
             if (index === -1) {
-                if (size === 'S') {
-                    if (Number(amount) <= item.sizeS) {
+                if (size === '150ml') {
+                    if (Number(amount) <= item.size) {
                         setCart(cart => [...cart, { item, amount, size }])
                         toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!")
                     }
@@ -52,25 +52,25 @@ function ProductSale({ setCart, cart }) {
                     }
 
                 }
-                else if (size === 'M') {
-                    if (Number(amount) <= item.sizeM) {
-                        setCart(cart => [...cart, { item, amount, size }])
-                        toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!")
-                    }
-                    else {
-                        toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại")
-                    }
-                }
-                else {
-                    if (Number(amount) <= item.sizeL) {
-                        setCart(cart => [...cart, { item, amount, size }])
-                        toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!")
-                    }
-                    else {
-                        toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại")
-                    }
+                // else if (size === 'M') {
+                //     if (Number(amount) <= item.sizeM) {
+                //         setCart(cart => [...cart, { item, amount, size }])
+                //         toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!")
+                //     }
+                //     else {
+                //         toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại")
+                //     }
+                // }
+                // else {
+                //     if (Number(amount) <= item.sizeL) {
+                //         setCart(cart => [...cart, { item, amount, size }])
+                //         toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!")
+                //     }
+                //     else {
+                //         toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại")
+                //     }
 
-                }
+                // }
 
             }
             else {
@@ -146,19 +146,19 @@ function ProductSale({ setCart, cart }) {
 
                                         <div className="product__size d-flex" style={{ alignItems: "center" }}>
                                             <div className="title" style={{ fontSize: "16px", marginRight: "10px" }}>
-                                                Kích thước:
+                                                Dung tích:
                                             </div>
                                             <div className="select-swap">
                                                 <div className="swatch-element" data-value={item._id} >
-                                                    <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `S-${item._id}`}
-                                                        value="S" />
+                                                    <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `150ml-${item._id}`}
+                                                        value="150ml" />
                                                     <label for={`swatch-giay-${item._id}-1`} className="sd" onClick={() => {
-                                                        setCurrentSize(`S-${item._id}`)
-                                                        setSize("S")
+                                                        setCurrentSize(`150ml-${item._id}`)
+                                                        setSize("150ml")
                                                         setCurrentID(item._id)
-                                                    }}><span>S</span></label>
+                                                    }}><span>150ml</span></label>
                                                 </div>
-                                                <div className="swatch-element" data-value={item._id}>
+                                                {/* <div className="swatch-element" data-value={item._id}>
                                                     <input type="radio" className="variant-1" id={`swatch-giay-${item._id}-2`} name={item._id} checked={currentSize === `M-${item._id}`}
                                                         value="M" />
                                                     <label for={`swatch-giay-${item._id}-2`} className="sd" onClick={() => {
@@ -176,7 +176,7 @@ function ProductSale({ setCart, cart }) {
                                                         setSize("L")
                                                         setCurrentID(item._id)
                                                     }}><span>L</span></label>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
@@ -228,19 +228,19 @@ function ProductSale({ setCart, cart }) {
 
                                     <div className="product__size d-flex" style={{ alignItems: "center" }}>
                                         <div className="title" style={{ fontSize: "16px", marginRight: "10px" }}>
-                                            Kích thước:
+                                            Dung tích:
                                         </div>
                                         <div className="select-swap">
                                             <div className="swatch-element" data-value={item._id} >
-                                                <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `S-${item._id}`}
-                                                    value="S" />
+                                                <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `150ml-${item._id}`}
+                                                    value="150ml" />
                                                 <label for={`swatch-giay-${item._id}-1`} className="sd" onClick={() => {
-                                                    setCurrentSize(`S-${item._id}`)
-                                                    setSize("S")
+                                                    setCurrentSize(`150ml-${item._id}`)
+                                                    setSize("150ml")
                                                     setCurrentID(item._id)
-                                                }}><span>S</span></label>
+                                                }}><span>150ml</span></label>
                                             </div>
-                                            <div className="swatch-element" data-value={item._id}>
+                                            {/* <div className="swatch-element" data-value={item._id}>
                                                 <input type="radio" className="variant-1" id={`swatch-giay-${item._id}-2`} name={item._id} checked={currentSize === `M-${item._id}`}
                                                     value="M" />
                                                 <label for={`swatch-giay-${item._id}-2`} className="sd" onClick={() => {
@@ -258,7 +258,7 @@ function ProductSale({ setCart, cart }) {
                                                     setSize("L")
                                                     setCurrentID(item._id)
                                                 }}><span>L</span></label>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
@@ -309,19 +309,19 @@ function ProductSale({ setCart, cart }) {
 
                                     <div className="product__size d-flex" style={{ alignItems: "center" }}>
                                         <div className="title" style={{ fontSize: "16px", marginRight: "10px" }}>
-                                            Kích thước:
+                                            Dung tích:
                                         </div>
                                         <div className="select-swap">
                                             <div className="swatch-element" data-value={item._id} >
-                                                <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `S-${item._id}`}
-                                                    value="S" />
+                                                <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `150ml-${item._id}`}
+                                                    value="150ml" />
                                                 <label for={`swatch-giay-${item._id}-1`} className="sd" onClick={() => {
-                                                    setCurrentSize(`S-${item._id}`)
-                                                    setSize("S")
+                                                    setCurrentSize(`150ml-${item._id}`)
+                                                    setSize("150ml")
                                                     setCurrentID(item._id)
-                                                }}><span>S</span></label>
+                                                }}><span>150ml</span></label>
                                             </div>
-                                            <div className="swatch-element" data-value={item._id}>
+                                            {/* <div className="swatch-element" data-value={item._id}>
                                                 <input type="radio" className="variant-1" id={`swatch-giay-${item._id}-2`} name={item._id} checked={currentSize === `M-${item._id}`}
                                                     value="M" />
                                                 <label for={`swatch-giay-${item._id}-2`} className="sd" onClick={() => {
@@ -339,7 +339,7 @@ function ProductSale({ setCart, cart }) {
                                                     setSize("L")
                                                     setCurrentID(item._id)
                                                 }}><span>L</span></label>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
@@ -391,19 +391,19 @@ function ProductSale({ setCart, cart }) {
 
                                     <div className="product__size d-flex" style={{ alignItems: "center" }}>
                                         <div className="title" style={{ fontSize: "16px", marginRight: "10px" }}>
-                                            Kích thước:
+                                            Dung tích:
                                         </div>
                                         <div className="select-swap">
                                             <div className="swatch-element" data-value={item._id} >
-                                                <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `S-${item._id}`}
-                                                    value="S" />
+                                                <input type="radio" className={`variant-1 `} id={`swatch-giay-${item._id}-1`} name={item._id} checked={currentSize === `150ml-${item._id}`}
+                                                    value="150ml" />
                                                 <label for={`swatch-giay-${item._id}-1`} className="sd" onClick={() => {
-                                                    setCurrentSize(`S-${item._id}`)
-                                                    setSize("S")
+                                                    setCurrentSize(`150ml-${item._id}`)
+                                                    setSize("150ml")
                                                     setCurrentID(item._id)
-                                                }}><span>S</span></label>
+                                                }}><span>150ml</span></label>
                                             </div>
-                                            <div className="swatch-element" data-value={item._id}>
+                                            {/* <div className="swatch-element" data-value={item._id}>
                                                 <input type="radio" className="variant-1" id={`swatch-giay-${item._id}-2`} name={item._id} checked={currentSize === `M-${item._id}`}
                                                     value="M" />
                                                 <label for={`swatch-giay-${item._id}-2`} className="sd" onClick={() => {
@@ -421,7 +421,7 @@ function ProductSale({ setCart, cart }) {
                                                     setSize("L")
                                                     setCurrentID(item._id)
                                                 }}><span>L</span></label>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>

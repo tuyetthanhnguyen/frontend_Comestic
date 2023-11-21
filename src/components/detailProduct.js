@@ -7,9 +7,9 @@ function DetailProduct({ setCart, cart }) {
   const location = useLocation();
 
   const [currentID, setCurrentID] = useState();
-  const [currentSize, setCurrentSize] = useState("S");
+  const [currentSize, setCurrentSize] = useState("150ml");
   const [currentProduct, setCurrentProduct] = useState();
-  const [size, setSize] = useState("S");
+  const [size, setSize] = useState("150ml");
   const [currentNumber, setCurrentNumber] = useState(0);
 
   useEffect(() => {
@@ -34,7 +34,9 @@ function DetailProduct({ setCart, cart }) {
           queryString.parse(location.search).type === item.type
         ) {
           setCurrentProduct(item);
-          setCurrentNumber(item.sizeS + item.sizeM + item.sizeL);
+          // setCurrentNumber(item.sizeS + item.sizeM + item.sizeL);
+          setCurrentNumber(item.size);
+
         }
       });
     }
@@ -43,13 +45,14 @@ function DetailProduct({ setCart, cart }) {
   }, [location.search]);
 
   async function changeSize(value) {
-    if (value === "S") {
-      setCurrentNumber(currentProduct.sizeS);
-    } else if (value === "M") {
-      setCurrentNumber(currentProduct.sizeM);
-    } else {
-      setCurrentNumber(currentProduct.sizeL);
+    if (value === "150ml") {
+      setCurrentNumber(currentProduct.size);
     }
+    // else if (value === "M") {
+    //   setCurrentNumber(currentProduct.sizeM);
+    // } else {
+    //   setCurrentNumber(currentProduct.sizeL);
+    // }
   }
 
   const AddToCart = (item) => {
@@ -76,28 +79,31 @@ function DetailProduct({ setCart, cart }) {
       }
       console.log("tempCart", tempCart);
       if (index === -1) {
-        if (size === "S") {
-          if (Number(amount) <= item.sizeS) {
-            setCart((cart) => [...cart, { item, amount, size }]);
-            toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!");
-          } else {
-            toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại");
-          }
-        } else if (size === "M") {
-          if (Number(amount) <= item.sizeM) {
-            setCart((cart) => [...cart, { item, amount, size }]);
-            toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!");
-          } else {
-            toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại");
-          }
-        } else {
-          if (Number(amount) <= item.sizeL) {
+        if (size === "150ml") {
+          if (Number(amount) <= item.size) {
             setCart((cart) => [...cart, { item, amount, size }]);
             toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!");
           } else {
             toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại");
           }
         }
+        // else if (size === "M") {
+        //   if (Number(amount) <= item.sizeM) {
+        //     setCart((cart) => [...cart, { item, amount, size }]);
+        //     toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!");
+        //   } else {
+        //     toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại");
+        //   }
+        // } 
+        // else {
+        //   if (Number(amount) <= item.sizeL) {
+        //     setCart((cart) => [...cart, { item, amount, size }]);
+        //     toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!");
+        //   } 
+        //   else {
+        //     toast.warn("Vượt quá số lượng sản phẩm hiện có, vui lòng thử lại");
+        //   }
+        // }
       } else {
         setCart(tempCart);
         toast.success("Bạn đã thêm sản phẩm vào giỏ thành công!");
@@ -162,7 +168,8 @@ function DetailProduct({ setCart, cart }) {
                     className="title"
                     style={{ fontSize: "16px", marginRight: "10px" }}
                   >
-                    Kích thước:
+                    {/* Kích thước: */}
+                    Dung tích:
                   </div>
                   <div className="select-swap">
                     <div
@@ -174,23 +181,23 @@ function DetailProduct({ setCart, cart }) {
                         className={`variant-1 `}
                         id={`swatch-giay-${currentProduct._id}-1`}
                         name={currentProduct._id}
-                        checked={currentSize === `S-${currentProduct._id}`}
-                        value="S"
+                        checked={currentSize === `150ml-${currentProduct._id}`}
+                        value="150ml"
                       />
                       <label
                         for={`swatch-giay-${currentProduct._id}-1`}
                         className="sd"
                         onClick={() => {
-                          setCurrentSize(`S-${currentProduct._id}`);
-                          setSize("S");
+                          setCurrentSize(`150ml-${currentProduct._id}`);
+                          setSize("150ml");
                           setCurrentID(currentProduct._id);
-                          changeSize("S");
+                          changeSize("150ml");
                         }}
                       >
-                        <span>S</span>
+                        <span>150ml</span>
                       </label>
                     </div>
-                    <div
+                    {/* <div
                       className="swatch-element"
                       data-value={currentProduct._id}
                     >
@@ -239,7 +246,7 @@ function DetailProduct({ setCart, cart }) {
                       >
                         <span>L</span>
                       </label>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="product__wrap">

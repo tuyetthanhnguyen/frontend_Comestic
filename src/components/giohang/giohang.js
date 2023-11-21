@@ -429,19 +429,21 @@ class Cart extends React.Component {
         let result = []
         this.state.listProduct.forEach(function (a) {
             if (!this[a.item._id]) {
-                this[a.item._id] = { id: a.item._id, sizeS: 0, sizeM: 0, sizeL: 0, item: a.item };
+                // this[a.item._id] = { id: a.item._id, sizeS: 0, sizeM: 0, sizeL: 0, item: a.item };
+                this[a.item._id] = { id: a.item._id, size: 0, item: a.item };
+
                 result.push(this[a.item._id]);
             }
             if (a.size === 'S') {
-                console.log("this[a.item._id].sizeS", typeof this[a.item._id].sizeS)
-                this[a.item._id].sizeS += Number(a.amount);
+                console.log("this[a.item._id].size", typeof this[a.item._id].size)
+                this[a.item._id].size += Number(a.amount);
             }
-            else if (a.size == 'M') {
-                this[a.item._id].sizeM += Number(a.amount);
-            }
-            else if (a.size == 'L') {
-                this[a.item._id].sizeL += Number(a.amount);
-            }
+            // else if (a.size == 'M') {
+            //     this[a.item._id].sizeM += Number(a.amount);
+            // }
+            // else if (a.size == 'L') {
+            //     this[a.item._id].sizeL += Number(a.amount);
+            // }
         }, Object.create(null));
 
         if (this.props.userLoggedIn) {
@@ -551,7 +553,9 @@ class Cart extends React.Component {
                                     <span className="cart-right-header-item col-xl-3">
                                         Số lượng
                                     </span>
-                                    <span className="cart-right-header-item col-xl-2">Kích cỡ</span>
+                                    {/* <span className="cart-right-header-item col-xl-2">Kích cỡ</span> */}
+                                    <span className="cart-right-header-item col-xl-2">Thể tích</span>
+
                                     <span className="cart-right-header-item col-xl-3">Tổng</span>
                                 </li>
 
