@@ -126,9 +126,9 @@ function EditProduct() {
     const [name, setName] = useState()
     const [type, setType] = useState()
     const [price, setPrice] = useState()
-    const [sizeS, setSizeS] = useState()
-    const [sizeL, setSizeL] = useState()
-    const [sizeM, setsizeM] = useState()
+    const [size, setSize] = useState()
+    // const [sizeL, setSizeL] = useState()
+    // const [sizeM, setsizeM] = useState()
     const [color, setColor] = useState()
 
     async function getBase64(file) {
@@ -172,9 +172,9 @@ function EditProduct() {
                     setName(item.name)
                     setType(item.type)
                     setPrice(item.price)
-                    setSizeS(item.sizeS)
-                    setSizeL(item.sizeL)
-                    setsizeM(item.sizeM)
+                    setSize(item.size)
+                    // setSizeL(item.sizeL)
+                    // setsizeM(item.sizeM)
                     setColor(item.color)
                 }
 
@@ -189,9 +189,9 @@ function EditProduct() {
                     setName(item.name)
                     setType(item.type)
                     setPrice(item.price)
-                    setSizeS(item.sizeS)
-                    setSizeL(item.sizeL)
-                    setsizeM(item.sizeM)
+                    setSize(item.size)
+                    // setSizeL(item.sizeL)
+                    // setsizeM(item.sizeM)
                     setColor(item.color)
                 }
 
@@ -205,9 +205,9 @@ function EditProduct() {
                     setName(item.name)
                     setType(item.type)
                     setPrice(item.price)
-                    setSizeS(item.sizeS)
-                    setSizeL(item.sizeL)
-                    setsizeM(item.sizeM)
+                    setSize(item.size)
+                    // setSizeL(item.sizeL)
+                    // setsizeM(item.sizeM)
                     setColor(item.color)
                 }
 
@@ -225,9 +225,12 @@ function EditProduct() {
 
     const updateProduct = async () => {
         let today = new Date().toISOString().slice(0, 10)
-        let currentQuantity = sizeS + sizeL + sizeM
-        console.log(name, type, price, currentQuantity, sizeS, sizeL, sizeM, color, avatar)
-        if (name && type && price && currentQuantity && sizeS && sizeL && sizeM && color && avatar) {
+        // let currentQuantity = sizeS + sizeL + sizeM
+        // console.log(name, type, price, currentQuantity, sizeS, sizeL, sizeM, color, avatar)
+        // if (name && type && price && currentQuantity && sizeS && sizeL && sizeM && color && avatar) {
+        let currentQuantity = size
+        console.log(name, type, price, currentQuantity, size, color, avatar)
+        if (name && type && price && currentQuantity && size && color && avatar) {
             const config = {
                 method: 'PUT',
                 headers: {
@@ -242,9 +245,9 @@ function EditProduct() {
                     img: avatar,
                     currentQuantity: currentQuantity,
                     currentSold: 0,
-                    sizeS: sizeS,
-                    sizeL: sizeL,
-                    sizeM: sizeM,
+                    size: size,
+                    // sizeL: sizeL,
+                    // sizeM: sizeM,
                     color: color,
                     date: today,
                     updateDate: today
@@ -302,19 +305,19 @@ function EditProduct() {
                             </div>
                             <div className="d-flex">
                                 <div className="form-group col-xl-4">
-                                    <label htmlFor="exampleInputPassword1">Số lượng size S</label>
+                                    <label htmlFor="exampleInputPassword1">Số lượng</label>
                                     <input
                                         type="number"
                                         className="form-control"
                                         id="exampleInputPassword1"
                                         name="name"
-                                        value={sizeS}
-                                        onChange={(e) => setSizeS(e.target.value)}
+                                        value={size}
+                                        onChange={(e) => setSize(e.target.value)}
                                         placeholder="Nhập số lượng sản phẩm"
                                         required
                                     />
                                 </div>
-                                <div className="form-group col-xl-4">
+                                {/* <div className="form-group col-xl-4">
                                     <label htmlFor="exampleInputPassword1">Số lượng size M:</label>
                                     <input
                                         type="number"
@@ -326,9 +329,9 @@ function EditProduct() {
                                         placeholder="Nhập số lượng sản phẩm"
                                         required
                                     />
-                                </div>
+                                </div> */}
 
-                                <div className="form-group col-xl-4">
+                                {/* <div className="form-group col-xl-4">
                                     <label htmlFor="exampleInputPassword1">Số lượng size L:</label>
                                     <input
                                         type="number"
@@ -340,7 +343,7 @@ function EditProduct() {
                                         placeholder="Nhập số lượng sản phẩm"
                                         required
                                     />
-                                </div>
+                                </div> */}
 
 
 

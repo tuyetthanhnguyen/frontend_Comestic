@@ -124,9 +124,9 @@ function AddSale() {
   const [name, setName] = useState()
   const [type, setType] = useState()
   const [price, setPrice] = useState()
-  const [sizeS, setSizeS] = useState()
-  const [sizeL, setSizeL] = useState()
-  const [sizeM, setsizeM] = useState()
+  const [size, setSize] = useState()
+  // const [sizeL, setSizeL] = useState()
+  // const [sizeM, setsizeM] = useState()
   const [color, setColor] = useState()
   const [sale, setSale] = useState()
   const [currentItem, setCurrentItem] = useState()
@@ -195,9 +195,9 @@ function AddSale() {
           img: item.avatar,
           currentQuantity: item.currentQuantity,
           currentSold: item.currentSold,
-          sizeS: item.sizeS,
-          sizeL: item.sizeL,
-          sizeM: item.sizeM,
+          size: item.size,
+          // sizeL: item.sizeL,
+          // sizeM: item.sizeM,
           color: item.color,
           date: item.date,
           updateDate: today
