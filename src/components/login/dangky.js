@@ -105,7 +105,7 @@ function DangKy() {
                     <small></small>
                 </div>
                 <div className="form-controls">
-                    <select name="cars" id="cars" onChange={(e) => setSex(e.target.value)} style={{ width: "100%" }}>
+                    <select name="cars" id="cars" onChange={(e) => setSex(e.target.value)} style={{ width: "100%", height: "40px" }}>
                         <option>Giới tính</option>
                         <option value="Male">Nam</option>
                         <option value="Female">Nữ</option>
@@ -116,8 +116,8 @@ function DangKy() {
 
                 <p className="submit" onClick={registered}>Đăng ký</p>
                 <div className="signup_link">Bạn đã có tài khoản? <Link to="/login">Đăng nhập</Link></div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 }
 

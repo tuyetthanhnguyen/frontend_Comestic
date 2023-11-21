@@ -296,7 +296,7 @@ function EditUser() {
               <small></small>
             </div>
             <div className="form-controls">
-              <select name="cars" id="cars" value={sex} onChange={(e) => setSex(e.target.value)} style={{ width: "100%" }}>
+              <select name="cars" id="cars" value={sex} onChange={(e) => setSex(e.target.value)} style={{ width: "100%", height: "40px" }}>
                 <option>Giới tính</option>
                 <option value="Male">Nam</option>
                 <option value="Female">Nữ</option>
@@ -304,7 +304,7 @@ function EditUser() {
             </div>
 
             <div className="form-controls">
-              <select name="cars" id="cars" value={role} onChange={(e) => setRole(e.target.value)} style={{ width: "100%" }}>
+              <select name="cars" id="cars" value={role} onChange={(e) => setRole(e.target.value)} style={{ width: "100%", height: "40px" }}>
                 <option>Admin hay Client</option>
                 <option value="Admin">Admin</option>
                 <option value="Client">Client</option>

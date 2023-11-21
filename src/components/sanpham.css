@@ -418,7 +418,7 @@
 
     .swatch-element input[type=radio].variant-1:checked~.sd {
         border: 1px solid #000;
-        background: #2d7b78;
+        background: #ffb600;
         color: #fff;
     }
 

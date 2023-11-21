@@ -23,7 +23,7 @@ form .form-controls {
 }
 
 .form-controls.success {
-	border-bottom-color: #2d7b78;
+	border-bottom-color: #ffb600;
 }
 
 .form-controls.error {
@@ -54,7 +54,7 @@ small {
 	left: 0;
 	width: 0%;
 	height: 2px;
-	background: #2d7b78;
+	background: #ffb600;
 	transition: 0.3s;
 }
 
@@ -67,7 +67,7 @@ small {
 	width: 100%;
 	height: 50px;
 	border: 1px solid;
-	background: #2d7b78;
+	background: #ffb600;
 	border-radius: 25px;
 	font-size: 18px;
 	color: #e9f4fb;
@@ -80,7 +80,7 @@ small {
 }
 
 .submit:hover {
-	background-color: #3db7b3;
+	background-color: #cc8f00;
 }
 
 .signup_link {
@@ -91,7 +91,7 @@ small {
 }
 
 .signup_link a {
-	color: #2d7b78;
+	color: #ffb600;
 	text-decoration: none;
 }
 

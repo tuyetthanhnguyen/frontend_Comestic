@@ -43,7 +43,7 @@ const HeaderStyled = styled.div`
         height: 100%;
         width: 100%;
         outline: none;
-        background: #2d7b78;
+        background: #EFEEF1;
         border: 2px solid #EFEEF1;
         border-radius: 6px;
         font-size: 18px;
@@ -54,7 +54,7 @@ const HeaderStyled = styled.div`
         position: absolute;
         height: 40px;
         width: 42px;
-        background: #2d7b78;
+        background: #ffb600;
         right: 0px;
         top: 50%;
         transform: translateY(-50%);

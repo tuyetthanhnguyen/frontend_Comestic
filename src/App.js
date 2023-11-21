@@ -35,7 +35,7 @@ const AdminPageStyled = styled.div`
     cursor: pointer;
 
     .adminPage-dashboard {
-        background: #2d7b78;
+        background: #ba9606bb;
         color: white;
         font-size: 24px;
         min-height: 721px;

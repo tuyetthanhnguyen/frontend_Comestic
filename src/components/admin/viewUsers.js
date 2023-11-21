@@ -98,7 +98,7 @@ const OrderStyled = styled.div`
           border-radius:25px;
         }
         .btn-edit{
-          background:#2d7b78;
+          background:#ffb600;
           color: white;
           border-radius:25px;
         }

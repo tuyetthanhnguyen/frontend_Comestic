@@ -34,7 +34,7 @@ const UserAccountSytled = styled.div`
 
         .btn-submit {
             color: white;
-            background-color: #2d7b78
+            background-color: #ffb600;
         }
     }
 

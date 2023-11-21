@@ -91,7 +91,7 @@ const AddUserStyled = styled.div`
     font-size: 18px;
 
         .btn-all-item{
-          background: #2d7b78;
+          background: #ffb600;
           color: white;
           border-radius:25px;
         }
@@ -261,7 +261,7 @@ function AddUser() {
               <small></small>
             </div>
             <div className="form-controls">
-              <select name="cars" id="cars" value={sex} onChange={(e) => setSex(e.target.value)} style={{ width: "100%" }}>
+              <select name="cars" id="cars" value={sex} onChange={(e) => setSex(e.target.value)} style={{ width: "100%", height: "40px", }}>
                 <option>Giới tính</option>
                 <option value="Male">Nam</option>
                 <option value="Female">Nữ</option>
@@ -269,7 +269,7 @@ function AddUser() {
             </div>
 
             <div className="form-controls">
-              <select name="cars" id="cars" value={role} onChange={(e) => setRole(e.target.value)} style={{ width: "100%" }}>
+              <select name="cars" id="cars" value={role} onChange={(e) => setRole(e.target.value)} style={{ width: "100%", height: "40px" }}>
                 <option>Admin hay Client</option>
                 <option value="Admin">Admin</option>
                 <option value="Client">Client</option>
@@ -280,9 +280,9 @@ function AddUser() {
 
             <p className="submit" onClick={registered}>Đăng ký</p>
           </form>
-        </div>
-      </div>
-    </AddUserStyled>
+        </div >
+      </div >
+    </AddUserStyled >
   );
 }
 
