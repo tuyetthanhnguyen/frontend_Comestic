@@ -173,9 +173,10 @@ function ViewOrder() {
                         </span>
                         <div className="admin-right-headfr-item col-xl-3">
                             {product.map(item => {
-                                return (<div>{item.sizeS > 0 && <p>{item.item.name} size S : {item.sizeS}</p>}
-                                    {item.sizeM > 0 && <p>{item.item.name} size M : {item.sizeM}</p>}
-                                    {item.sizeL > 0 && <p>{item.item.name} size L : {item.sizeL}</p>}  </div>)
+                                return (<div>{item.size > 0 && <p>{item.item.name} size S : {item.size}</p>}
+                                    {/* {item.sizeM > 0 && <p>{item.item.name} size M : {item.sizeM}</p>}
+                                    {item.sizeL > 0 && <p>{item.item.name} size L : {item.sizeL}</p>}   */}
+                                </div>)
                             })
                             }
 

@@ -183,14 +183,14 @@ function ViewProduct() {
                     </span>
                     <div className="admin-right-header-item col-xl-2">
                         <p>
-                            SizeS : {item.sizeS}
+                            Size : {item.size}
                         </p>
-                        <p>
+                        {/* <p>
                             sizeM : {item.sizeM}
                         </p>
                         <p>
                             SizeL : {item.sizeL}
-                        </p>
+                        </p> */}
                     </div>
                     <span className="admin-right-header-item col-xl-2">
                         <div onClick={() => redirectLink(item, `/admin/edit-product?type=${item.type}&id=${item._id}`)}>
@@ -252,14 +252,14 @@ function ViewProduct() {
                     </span>
                     <div className="admin-right-header-item col-xl-2">
                         <p>
-                            SizeS : {item.sizeS}
+                            Size : {item.size}
                         </p>
-                        <p>
+                        {/* <p>
                             sizeM : {item.sizeM}
                         </p>
                         <p>
                             SizeL : {item.sizeL}
-                        </p>
+                        </p> */}
 
                     </div>
                     <span className="admin-right-header-item col-xl-2">
@@ -320,14 +320,14 @@ function ViewProduct() {
                     </span>
                     <div className="admin-right-header-item col-xl-2">
                         <p>
-                            SizeS : {item.sizeS}
+                            Size : {item.size}
                         </p>
-                        <p>
+                        {/* <p>
                             sizeM : {item.sizeM}
                         </p>
                         <p>
                             SizeL : {item.sizeL}
-                        </p>
+                        </p> */}
 
                     </div>
                     <span className="admin-right-header-item col-xl-2">
